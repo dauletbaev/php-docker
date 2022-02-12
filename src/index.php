@@ -1,9 +1,9 @@
 <?php
 
 define('DB_HOST', 'db');
-define('DB_USER', 'mysql');
-define('DB_PASSWORD', 'mysql');
-define('DB_NAME', 'mysql');
+define('DB_USER', 'user');
+define('DB_PASSWORD', 'examplepassword');
+define('DB_NAME', 'test');
 
 class DB {
     private static $instance = null;
@@ -31,4 +31,10 @@ class DB {
 
 $conn = DB::getInstance()->getConnection();
 
-var_dump($conn);
+if ($conn) {
+    echo "Connected to DB";
+} else {
+    echo "Failed to connect to DB";
+}
+phpinfo();
+var_dump($_SERVER);
